@@ -1,7 +1,29 @@
-<HTML>
-<head>
-</head>
-<body>
-Test
-</body>
-</HTML>
+<!DOCTYPE html>
+<html>
+  <head>
+
+    {{{meta.inject().title.text() }}}
+    {{{meta.inject().meta.text() }}}
+    <meta charset="utf-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, user-draggable=no,minimal-ui">
+    <link rel="apple-touch-icon" sizes="76x76" href="/public/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/fav/favicon-16x16.png">
+    <link rel="mask-icon" href="/public/fav/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+
+    <meta name="theme-color" content="#333">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.9.95/css/materialdesignicons.min.css"> 
+    <!--<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">-->
+    <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet">
+    <!-- 
+  <script src="https://vjs.zencdn.net/5.4.6/video.js"></script>
+  <script src="/public/vvv/bin/videojs_5.vast.vpaid.js" defer async></script> -->
+  </head>
+  <body>
+
+    <!--vue-ssr-outlet-->
+  </body>
+</html>
