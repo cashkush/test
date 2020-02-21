@@ -5,15 +5,15 @@
     "1.6efd60989cddcc52dd6a.js",
     "2.9e8a04213b55cc51dcd9.js",
     "vendor.758f8b0d909c83b29660.js",
-    "app.582652ba08ab06e208d1.js",
-    "manifest.fd58eacd6cc8829af6bb.js",
-    "common.582652ba08ab06e208d1.css"
+    "app.5471cc2813104888840b.js",
+    "manifest.2bcc7f57f0b9f553204e.js",
+    "common.5471cc2813104888840b.css"
   ],
   "initial": [
-    "manifest.fd58eacd6cc8829af6bb.js",
+    "manifest.2bcc7f57f0b9f553204e.js",
     "vendor.758f8b0d909c83b29660.js",
-    "app.582652ba08ab06e208d1.js",
-    "common.582652ba08ab06e208d1.css"
+    "app.5471cc2813104888840b.js",
+    "common.5471cc2813104888840b.css"
   ],
   "async": [
     "0.808d5de184ff8e79e397.js",
