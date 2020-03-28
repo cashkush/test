@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <link href="/public/fluid.css" rel="stylesheet">
+        <script src="/public/fluid.js"></script> 
+    </head>
+    <body>
+        <video id="vast">
+            <source src="/public/1.mp4" type="video/mp4"/>
+        </video>
+        <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+             fluidPlayer("vast",{
+               layoutControls: {
+                        primaryColor:           false,
+                        playButtonShowing:      false,
+                        playPauseAnimation:     false,
+                        fillToContainer:        true,
+                        autoPlay:               true,
+                        preload:                true,
+                        mute:                   false,
+                        doubleclickFullscreen:  false,
+                        subtitlesEnabled:       false,
+                        keyboardControl:        false,
+                        layout:                 'default',
+                        allowDownload:          false,
+                        playbackRateEnabled:    false,
+                        allowTheatre:           false,
+                        title:                  false,
+                        logo: {
+                            imageUrl:           null,
+                            position:           'top left',
+                            clickUrl:           null,
+                            opacity:            1
+                        },
+                        controlBar: {
+                            autoHide:           false,
+                            autoHideTimeout:    3,
+                            animated:           false
+                        },
+                        timelinePreview:        {},
+                        htmlOnPauseBlock: {
+                            html:               null,
+                            height:             null,
+                            width:              null
+                        },
+                        playerInitCallback:     (()=>{
+                            document.querySelector('#vast_fluid_controls_container').style.opacity='0'
+                        })
+                },
+                vastOptions: {
+                    showPlayButton:             false,
+                    "adList": [
+                        {
+                            "roll": "preRoll",
+                            "vastTag": 'https://syndication.exosrv.com/splash.php?idzone=3750381',
+                        },
+                        {
+                            "roll": "midRoll",
+                            "vastTag": 'https://syndication.exosrv.com/splash.php?idzone=3750381',
+                            "timer": 8
+                        },
+                        {
+                            "roll": "midRoll",
+                            "vastTag": 'https://syndication.exosrv.com/splash.php?idzone=3750381',
+                            "timer": 10
+                        },
+                        {
+                            "roll": "postRoll",
+                            "vastTag": 'https://syndication.exosrv.com/splash.php?idzone=3750381',
+                        }
+                    ],
+                    vastAdvanced: {
+                        vastLoadedCallback:       ()=>{},
+                        noVastVideoCallback:      ()=>{window.parent.document.dispatchEvent(new CustomEvent('novast', { detail: true }))},
+                        vastVideoSkippedCallback: ()=>{},
+                        vastVideoEndedCallback:   ()=>{}
+                    }
+            }
+        })
+        });
+    </script>
+    </body>
+</html>
