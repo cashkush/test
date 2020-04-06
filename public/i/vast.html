@@ -17,7 +17,7 @@
                         fillToContainer:        true,
                         autoPlay:               true,
                         preload:                true,
-                        mute:                   false,
+                        mute:                   true,
                         doubleclickFullscreen:  false,
                         subtitlesEnabled:       false,
                         keyboardControl:        false,
@@ -70,13 +70,15 @@
                         }
                     ],
                     vastAdvanced: {
-                        vastLoadedCallback:       ()=>{},
+                        vastLoadedCallback:       ()=>{window.parent.document.dispatchEvent(new CustomEvent('vastLoaded', { detail: true }))},
                         noVastVideoCallback:      ()=>{window.parent.document.dispatchEvent(new CustomEvent('novast', { detail: true }))},
                         vastVideoSkippedCallback: ()=>{},
                         vastVideoEndedCallback:   ()=>{}
                     }
             }
+            
         })
+        document.querySelector('#vast').play()
         });
     </script>
     </body>
