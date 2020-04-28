@@ -1,0 +1,49 @@
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socketcluster-client/13.0.0/socketcluster.min.js"></script>
+</html>
+<body >
+	<form>
+		<input type="text" id="ip" value="s1.beapoker.pro">
+		<input type="submit"/>
+	</form>
+	<div id="test"></div>
+	</form>
+	
+	<button onClick="window.u()">send data</button>
+<script>
+	document.querySelector('form').addEventListener('submit',conn)
+function conn(event) {
+	event.preventDefault()
+	var url =document.querySelector('#ip').value;
+	console.log(url)
+	window.c = socketCluster.connect({
+		host:url,
+		secure:true,
+	});
+	window.c.on('connect',(data)=>{
+		console.log('connesso',data)
+	})
+	window.c.on('authenticate',(data)=>{
+		console.log('auth',data);
+		
+		window.c.subscribe('test')
+	})
+ 	window.c.on('subscribe',()=>console.log('subscribed test1'))
+	
+	window.c.channel('test').watch(d=>test.innerHTML=d)
+	/*window.ra = c.subscribe('app/tornei');
+	ra.watch(d=>{
+		console.log(d)
+	})*/
+	window.u = function(){
+		console.log('publishing to test')
+
+	}
+	window.c.on('login',data=>{
+			console.log('LOGGED IN',data)
+	})
+
+	return false;
+}
+</script>
+</body>
